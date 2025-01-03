@@ -5,33 +5,37 @@
    - Check DB config mode [0: test, 1: production]
    ```
 
-1. **Activate the Virtual Environment (RECOMMENDED WITH ANACONDA):**
+1. **Create Virtual Environment (RECOMMENDED WITH ANACONDA)**
+   ```bash
+   - python -m venv venv
+   ```
+2. **Activate the Virtual Environment:**
    ```bash
    venv\Scripts\activate  # For Windows
    # or
    source venv/bin/activate  # For macOS/Linux
    ```
 
-2. **Install New Packages:**
+3. **(For new package only) Install New Packages:**
    ```bash
    pip install package_name  # Replace with the desired package
    ```
 
-3. **Generate `requirements.txt`:**
+4. **Generate `requirements.txt`:**
    ```bash
    pip freeze > requirements.txt
    ```
 
-4. **Install Packages from `requirements.txt`:**
+5. **Install Packages from `requirements.txt`:**
    ```bash
    pip install -r requirements.txt
    ```
 
-5. **Run the Flask Application:**
+6. **Run the Flask Application:**
    ```bash
    python app.py
    ```
-6. **Open https://reqbin.com/**
+7. **Open https://reqbin.com/**
    ```bash
    # Follow the testcases format as below, 
    # The Google Form: "https://forms.gle/N7TPt3jNn1jCk4sj9" can help
