@@ -21,7 +21,7 @@
    pip install package_name  # Replace with the desired package
    ```
 
-4. **Generate `requirements.txt`:**
+4. **(For new package only) Generate `requirements.txt`:**
    ```bash
    pip freeze > requirements.txt
    ```
