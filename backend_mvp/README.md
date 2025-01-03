@@ -5,7 +5,7 @@
    - Check DB config mode [0: test, 1: production]
    ```
 
-1. **Activate the Virtual Environment:**
+1. **Activate the Virtual Environment (RECOMMENDED WITH ANACONDA):**
    ```bash
    venv\Scripts\activate  # For Windows
    # or
