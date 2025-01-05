@@ -5,8 +5,11 @@ from helpers.model import prompt_creator, db2
 import project_environment as env
 import openai
 import json
+from flask_cors import CORS
 
 api = Blueprint('api', __name__)
+
+CORS(api)
 
 # Load the cleaned data once
 df = load_and_clean_data()
@@ -45,21 +48,22 @@ def classification():
     else:
         return jsonify({"list": classification})
     
-@api.route('/questionaire', methods=['POST'])
-def questionaire():
+@api.route('/questionnaire', methods=['POST'])
+def questionnaire():
     data = request.get_json()
+    print(data)
     classification = data["list"]
-    questionaire_response = data["questionaire_response"]
+    questionnaire_response = data["questionnaire_response"]
 
     filtered_df = df.loc[classification]
     print("before", filtered_df)
 
-    if questionaire_response["phlegm_color"] == 2:
+    if questionnaire_response["phlegm_color"] == 2:
         return {"error": env.REJECTION[-2]}
 
     else:
-        for column in questionaire_response:
-            filtered_df = filtered_df[filtered_df[column] >= questionaire_response[column]]
+        for column in questionnaire_response:
+            filtered_df = filtered_df[filtered_df[column] >= questionnaire_response[column]]
     print("after", filtered_df)
 
     filtered_list = filtered_df.index.tolist()
@@ -76,8 +80,8 @@ def questionaire():
     else:
         return jsonify({"success": filtered_list})
 
-@api.route('/questionaire2', methods=['POST'])
-def questionaire2():
+@api.route('/questionnaire2', methods=['POST'])
+def questionnaire2():
     data = request.get_json()
     existing_list = data["list"]
     answer = data["answer"]
