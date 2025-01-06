@@ -1,3 +1,10 @@
+# How to run the test of frontend_mvp
+- Unzipped the file
+- run
+   ```bash
+   npm run dev
+   ```
+
 # How to run the test of backend_mvp
 0. **Review project_environment.py**
    ```bash
