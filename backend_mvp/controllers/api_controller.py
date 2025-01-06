@@ -53,7 +53,7 @@ def questionnaire():
     data = request.get_json()
     print(data)
     classification = data["list"]
-    questionnaire_response = data["questionnaire_response"]
+    questionnaire_response = data["questionnaireResponse"]
 
     filtered_df = df.loc[classification]
     print("before", filtered_df)
