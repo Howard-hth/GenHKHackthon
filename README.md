@@ -1,3 +1,5 @@
+# PLEASE WATCH early_prototype.mp4 FOR BRIEF DEMO
+
 # How to run the test of frontend_mvp
 - Unzipped the file
 - run
